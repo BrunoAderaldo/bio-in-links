@@ -1,0 +1,59 @@
+---
+export interface Link {
+  label: string;
+  url: string;
+}
+
+const LINKS: Link[] = [
+  {
+    label: "Twitter",
+    url: "https://twitter.com/AderaldoBruno",
+  },
+  {
+    label: "GitHub",
+    url: "https://github.com/BrunoAderaldo",
+  },
+];
+---
+
+<nav>
+  <ul class="links">
+    {
+      LINKS.map(({ url, label }) => (
+        <li>
+          <a href={url} class="link">
+            {label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.125rem;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .link {
+    display: block;
+    border: 1.5px solid var(--color-purple);
+    border-radius: 0.675rem;
+    color: var(--color-purple);
+    padding: 1.075rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .link:is(:hover, :focus-within) {
+    background-color: var(--color-purple);
+    color: white;
+    transform: translateY(-0.195rem);
+  }
+</style>

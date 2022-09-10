@@ -1,0 +1,25 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Links from "@components/Links.astro";
+---
+
+<Layout title="Bio in Links - Title">
+  <main>
+    <h1>H1 - Title</h1>
+    <Links />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: 680px;
+  }
+
+  h1 {
+    font-size: var(--font-size-xl);
+    margin: 2rem 0;
+    text-align: center;
+  }
+</style>
